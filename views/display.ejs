@@ -1,0 +1,23 @@
+<%= mydata.length %> Record Found
+<table  border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    <%for(var i=0;i<mydata.length;i++){ %>
+        <tr>
+            <td><%= i+1 %></td>
+            <td><%= mydata[i].uname %></td>
+            <td><%= mydata[i].upassword %></td>
+            <td><%= mydata[i].uemail %></td>
+            <td>
+                <a href="/show/<%= mydata[i]._id %>">show</a>
+                <a href="/edit/<%= mydata[i]._id %>">Edit</a>
+                <a href="/delete/<%= mydata[i]._id %>" onclick="return confirm('Sure you want to Delete')">Delete</a>
+            </td>
+        </tr>
+    <% } %>
+</table>
